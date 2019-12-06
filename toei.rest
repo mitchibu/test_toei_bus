@@ -1,0 +1,46 @@
+@token=f980b9f6b4a4d67d869c90ea574064c42d4f4690215df76e062b1322579a3b3e
+@operator=odpt.Operator:Toei
+@base=https://api.odpt.org/api/v4/
+@baseUrl=https://api.odpt.org
+
+### バス停
+GET https://api.odpt.org/api/v4/odpt:BusstopPole?odpt:operator={{operator}}&acl:consumerKey={{token}}
+
+### 時刻表
+GET https://api.odpt.org/api/v4/odpt:BusstopPoleTimetable?odpt:operator={{operator}}&acl:consumerKey={{token}}
+
+### 時刻表 門１９:都立三商前:門前仲町:土曜
+GET https://api.odpt.org/api/v4/odpt:BusstopPoleTimetable?odpt:operator={{operator}}&acl:consumerKey={{token}}&odpt:busstopPole=odpt.BusstopPole:Toei.ToritsuSansho.1050.1
+
+### バス停 １つ
+GET https://api.odpt.org/api/v4/datapoints/odpt.BusstopPole:Toei.ToritsuSansho.1050.1?acl:consumerKey={{token}}
+
+### バス停 位置
+@lat=35.642026
+@lon=139.796036
+GET https://api.odpt.org/api/v4/places/odpt:BusstopPole?lon={{lon}}&lat={{lat}}&radius=1000&acl:consumerKey={{token}}&odpt:operator={{operator}}
+
+###東１６:有明小中学校前:東京駅八重洲口:休日
+GET https://api.odpt.org/api/v4/datapoints/odpt.BusstopPoleTimetable:Toei.Higashi16.KaetsuAriakeChuKo.75.1.TokyoStationYaesuguchi.81-100?acl:consumerKey={{token}}
+
+###
+GET https://api.odpt.org/api/v4/odpt:BusTimetable?acl:consumerKey={{token}}&odpt:operator={{operator}}&owl:sameAs=odpt.BusstopPole:Toei.ToritsuSansho.1050.1
+GET https://api.odpt.org/api/v4/odpt:BusstopPoleTimetable?odpt:operator={{operator}}&acl:consumerKey={{token}}&odpt:busstopPole=odpt.BusstopPole:Toei.ToritsuSansho.1050.1
+odpt:calendar=odpt.Calendar:Wednesday
+
+###
+#GET https://api.odpt.org/api/v4/odpt:BusstopPoleTimetable?acl:consumerKey={{token}}&odpt:operator={{operator}}&odpt:busstopPole=odpt.BusstopPole:Toei.ToritsuSansho.1050.1&odpt:calendar=odpt.Calendar:Weekday
+#GET {{base}}odpt:BusstopPoleTimetable?acl:consumerKey={{token}}&owl:sameAs=odpt.BusstopPoleTimetable:Toei.Ou57.Akabaneekihigashiguchi.21.1.Toshimagochoumedanchi.Weekday
+#GET {{base}}datapoints/odpt.BusstopPoleTimetable:Toei.Higashi16.KaetsuAriakeChuKo.75.1.TokyoStationYaesuguchi.81-100?acl:consumerKey={{token}}
+#GET {{base}}datapoints/odpt.BusstopPoleTimetable:Toei.Ou57.Akabaneekihigashiguchi.21.1.Toshimagochoumedanchi.Weekday?acl:consumerKey={{token}}
+#GET {{base}}odpt:BusstopPoleTimetable?acl:consumerKey={{token}}&odpt:busstopPole=odpt.BusstopPole:Toei.KaetsuAriakeChuKo.75.1
+GET {{base}}odpt:BusTimetable?acl:consumerKey={{token}}&odpt:operator={{operator}}
+#&odpt:busstopPole=odpt.BusstopPole:Toei.KaetsuAriakeChuKo.75.1
+
+
+###
+@path=/api/v4/odpt:BusstopPoleTimetable
+@consumerKey=acl:consumerKey=f980b9f6b4a4d67d869c90ea574064c42d4f4690215df76e062b1322579a3b3e
+@operator=odpt:operator=odpt.Operator:Toei
+
+GET {{baseUrl}}{{path}}?{{consumerKey}}&{{operator}}&odpt:busstopPole=odpt.BusstopPole:Toei.KaetsuAriakeChuKo.75.1
