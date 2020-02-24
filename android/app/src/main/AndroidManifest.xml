@@ -16,7 +16,7 @@
         android:label="toei_bus"
         android:icon="@mipmap/ic_launcher">
         <meta-data android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyB97CtJbSq192tkMSMW0nJK2YthaStcftw"/>
+            android:value=""/>
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
